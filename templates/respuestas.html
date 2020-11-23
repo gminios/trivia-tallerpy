@@ -1,0 +1,29 @@
+<body>
+{% extends "base.html" %}
+{% block app_content %}
+<h1>Pregunta {{pregunta.nombre}}</h1>
+<br>
+<div style="text-align: center;">
+<h2><span
+style="font-weight: bold; background-color: rgb(147, 206, 222);">{{pregunta.text}}</span></h2>
+<br>
+<div style="text-align:center;">
+    <h2>Respuesta</h2>
+    <table>
+        <tr>
+            <td>
+        {% if respuesta.correcta %}
+            <h3 style="color: green;">FELICITACIONES!</h3>
+        {% else %}
+            <h3 style="color: red;">¡UHHHH. Lamentablemente esta no era la respuesta correcta!</h3>
+        {% endif %}
+            </td>
+        </tr>
+        <tr><td><a href="/trivia/categorias">Elegir otra categoría</a></td></tr>
+    </table>
+</div>
+<br>
+</div>
+<br>
+{% endblock %}
+</body>
